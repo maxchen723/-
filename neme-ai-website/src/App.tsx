@@ -2,7 +2,8 @@ import { useState } from 'react'
 import ParticleBackground from './components/ParticleBackground'
 import Header from './sections/Header'
 import Hero from './sections/Hero'
-import ProductSlides from './sections/ProductSlides'
+import ProductGrid from './sections/ProductGrid'
+import Solutions from './sections/Solutions'
 import ProductModal from './components/ProductModal'
 import type { Product } from './data/products'
 
@@ -15,8 +16,12 @@ export default function App() {
       <Header />
       <main className="relative z-10">
         <Hero />
-        <ProductSlides onProductClick={setSelectedProduct} />
+        <ProductGrid onProductClick={setSelectedProduct} />
+        <Solutions />
       </main>
+      <footer className="relative z-10 border-t border-white/[0.06] py-8 text-center">
+        <p className="text-[#444] text-xs">&copy; 2025 Neme AI 子空间机器人. All rights reserved.</p>
+      </footer>
       <ProductModal
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
