@@ -45,21 +45,14 @@ export default function Solutions() {
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               className="group cursor-pointer"
             >
-              {/* Image area */}
-              <div className="aspect-[16/10] bg-white/[0.03] border border-white/[0.08] rounded-2xl overflow-hidden flex items-center justify-center transition-all duration-300 group-hover:border-white/20 group-hover:bg-white/[0.05]">
+              <div className="aspect-[16/10] bg-white/[0.03] border border-white/[0.08] rounded-2xl overflow-hidden transition-all duration-300 group-hover:border-white/20 group-hover:bg-white/[0.05]">
                 <img
                   src={sol.image}
                   alt={sol.title}
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement
-                    target.style.display = 'none'
-                    target.parentElement!.innerHTML = '<div class="text-[#444] text-xs text-center p-6">行业方案示意图<br/>待添加</div>'
-                  }}
                 />
               </div>
 
-              {/* Text */}
               <div className="mt-3 px-1">
                 <h3 className="text-white text-sm font-medium">{sol.title}</h3>
                 <p className="text-[#555] text-xs mt-1 leading-relaxed">{sol.subtitle}</p>
@@ -67,10 +60,6 @@ export default function Solutions() {
             </motion.div>
           ))}
         </div>
-
-        <p className="text-[#444] text-xs mt-8 text-center">
-          行业方案图片请放入 public/images/ 目录：solution-inspection.png、solution-warehouse.png、solution-retail.png
-        </p>
       </div>
     </section>
   )
