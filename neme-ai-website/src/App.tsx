@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import ParticleBackground from './components/ParticleBackground'
 import Header from './sections/Header'
 import Hero from './sections/Hero'
 import ProductGrid from './sections/ProductGrid'
@@ -12,14 +11,13 @@ export default function App() {
 
   return (
     <>
-      <ParticleBackground />
       <Header />
-      <main className="relative z-10">
+      <main className="relative">
         <Hero />
         <ProductGrid onProductClick={setSelectedProduct} />
         <Solutions />
       </main>
-      <footer className="relative z-10 border-t border-white/[0.06] py-8 text-center">
+      <footer className="border-t border-white/[0.06] py-8 text-center">
         <p className="text-[#444] text-xs">&copy; 2025 Neme AI 子空间机器人. All rights reserved.</p>
       </footer>
       <ProductModal
