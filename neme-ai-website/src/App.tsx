@@ -1,23 +1,26 @@
+import { useState } from 'react'
 import ParticleBackground from './components/ParticleBackground'
 import Header from './sections/Header'
 import Hero from './sections/Hero'
-import Products from './sections/Products'
-import Solutions from './sections/Solutions'
-import Research from './sections/Research'
-import Footer from './sections/Footer'
+import ProductSlides from './sections/ProductSlides'
+import ProductModal from './components/ProductModal'
+import type { Product } from './data/products'
 
 export default function App() {
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
+
   return (
     <>
       <ParticleBackground />
       <Header />
       <main className="relative z-10">
         <Hero />
-        <Products />
-        <Solutions />
-        <Research />
+        <ProductSlides onProductClick={setSelectedProduct} />
       </main>
-      <Footer />
+      <ProductModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
     </>
   )
 }
